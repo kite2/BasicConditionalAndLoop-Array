@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Basic Algorithm</title>
+</head>
+<body>
+<div class="container text-center">
+    <h1>Các bài toán cơ bản</h1>
+    <div class="row">
+
+        <div class="col-sm-4 text-center">
+
+            <div class="btn-group">
+
+                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" id="dropdownMenu1">
+                    Thuật toán tìm kiếm
+                    <span class="caret"></span>
+                </button>
+
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#homework1">Thuật toán tìm kiếm tuyến tính</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#homework2">Thuật toán tìm kiếm nhị phân</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="col-sm-4 text-center">
+
+            <div class="btn-group">
+
+                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" id="dropdownMenu2">
+                    Bài toán điều kiện, vòng lặp
+                    <span class="caret"></span>
+                </button>
+
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#homework3">Vẽ hình chữ nhật</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#homework4">Vẽ hình chữ nhật rỗng</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#homework5">Vẽ tam giác vuông cân</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#homework6">Vẽ tam giác vuông cân rỗng</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#homework7">Vẽ tam giác cân</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#homework8">Vẽ tam giác cân rỗng</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#homework9">Vẽ hình thoi</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#homework10">Vẽ hình thoi rỗng</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="homework1" class="container">
+
+    <h2>Tìm kiếm tuyến tính</h2>
+
+    <form class="form-inline" role="form">
+
+        <div class="form-group">
+            <label class="sr-only" for="array1">Mảng đầu vào</label>
+            <input type="text" class="form-control" id="array1" placeholder="Mảng đầu vào">
+        </div>
+
+        <div class="form-group">
+            <label class="sr-only" for="number1">Số cần tìm</label>
+            <input type="text" class="form-control" id="number1" placeholder="Số cần tìm">
+        </div>
+
+        <button type = "button" class = "btn btn-default" onclick="showSearchLinearResult()">Tìm kiếm</button>
+
+    </form>
+
+    <p id="result1"></p>
+</div>
+
+<div id="homework2" class="container">
+
+    <h2>Tìm kiếm Nhị Phân</h2>
+
+    <form class="form-inline" role="form">
+
+        <div class="form-group">
+            <label class="sr-only" for="array2">Mảng đầu vào đã sắp xếp</label>
+            <input type="text" class="form-control" id="array2" placeholder="Mảng đầu vào đã sắp xếp">
+        </div>
+
+        <div class="form-group">
+            <label class="sr-only" for="number2">Số cần tìm</label>
+            <input type="text" class="form-control" id="number2" placeholder="Số cần tìm">
+        </div>
+
+        <button type = "button" class = "btn btn-default" onclick="showSearchBinaryResult()">Tìm kiếm</button>
+
+    </form>
+
+    <p id="result2"></p>
+</div>
+
+<div class="container">
+<div id="homework3">
+    <h2>Vẽ hình chữ nhật</h2>
+    <form class="form-inline" role="form">
+
+        <div class="form-group">
+            <label class="sr-only" for="length1">Chiều dài</label>
+            <input type="text" class="form-control" id="length1" placeholder="Chiều dài">
+        </div>
+
+        <div class="form-group">
+            <label class="sr-only" for="width1">Chiều rộng</label>
+            <input type="text" class="form-control" id="width1" placeholder="Chiều rộng">
+        </div>
+
+        <button type = "button" class = "btn btn-default" onclick="showRectangle()">Vẽ hình</button>
+
+    </form>
+
+    <table id="result3"></table>
+</div>
+</div>
+
+<div class="container" id="homework4">
+
+    <h2>Vẽ hình chữ nhật rỗng</h2>
+
+    <form class="form-inline" role="form">
+
+        <div class="form-group">
+            <label class="sr-only" for="length2">Chiều dài</label>
+            <input type="text" class="form-control" id="length2" placeholder="Chiều dài">
+        </div>
+
+        <div class="form-group">
+            <label class="sr-only" for="width2">Chiều rộng</label>
+            <input type="text" class="form-control" id="width2" placeholder="Chiều rộng">
+        </div>
+
+        <button type = "button" class = "btn btn-default" onclick="showEmptyRectangle()">Vẽ hình</button>
+
+    </form>
+
+    <div id="result4"></div>
+</div>
+
+<div class="container" id="homework5">
+
+    <h2>Vẽ hình tam giác cân</h2>
+
+    <form class="form-inline" role="form">
+
+        <div class="form-group">
+            <label class="sr-only" for="height1">Chiều cao</label>
+            <input type="text" class="form-control" id="height1" placeholder="Chiều dài">
+        </div>
+
+        <button type = "button" class = "btn btn-default" onclick="showRightAngledTriangle()">Vẽ hình</button>
+
+    </form>
+
+    <div id="result5"></div>
+</div>
+
+<div class="container" id="homework6">
+
+    <h2>Vẽ hình tam giác cân</h2>
+
+    <form class="form-inline" role="form">
+
+        <div class="form-group">
+            <label class="sr-only" for="height2">Chiều cao</label>
+            <input type="text" class="form-control" id="height2" placeholder="Chiều dài">
+        </div>
+
+        <button type = "button" class = "btn btn-default" onclick="drawEmptyRightAngledTriangle()">Vẽ hình</button>
+
+    </form>
+
+    <div id="result6"></div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+</body>
+</html>
