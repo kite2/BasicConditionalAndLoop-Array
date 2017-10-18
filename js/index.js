@@ -1,3 +1,13 @@
+$(window).scroll(function () {
+    if ($(window).scrollTop() > 104) {
+        $('#nav').addClass('navbar-fixed-top');
+    }
+    if ($(window).scrollTop() < 104) {
+        $('#nav').removeClass('navbar-fixed-top');
+    }
+});
+
+//Tìm kiếm kiểu tuyến tính
 function searchLinear(array, numberNeedToFind) {
     for (i = 0; i < array.length; i++) {
         if (array[i] === numberNeedToFind) {
@@ -19,7 +29,7 @@ function showSearchLinearResult() {
     return document.getElementById('result1').innerHTML = searchLinear(getArrayUnsorted(), getNumberToFindInLinearSearch());
 }
 
-
+//Tìm kiếm kiểu nhị phân
 function searchBinary(array, numberNeedToFind) {
     var minArrayIndex = 0;
     var maxArrayIndex = array.length - 1;
@@ -51,6 +61,7 @@ function showSearchBinaryResult() {
     return document.getElementById('result2').innerHTML = searchBinary(getArraySorted(), getNumberToFindInBinarySearch());
 }
 
+//Vẽ hình chữ nhật
 function drawRectangle(edgeWidth, edgeLength) {
     var rectangle = "";
     for (i = 1; i <= edgeWidth; i++) {
@@ -76,7 +87,7 @@ function showRectangle() {
     return document.getElementById('result3').innerHTML = drawRectangle(getWidthRectangle(), getLengthRectangle());
 }
 
-
+//Vẽ hình chữ nhật rỗng
 function drawEmptyRectangle(edgeWidth, edgeLength) {
     var rectangle = "";
     for (i = 1; i <= edgeWidth; i++) {
@@ -111,7 +122,7 @@ function showEmptyRectangle() {
     return document.getElementById('result4').innerHTML = drawEmptyRectangle(getWidthEmptyRectangle(), getLengthEmptyRectangle());
 }
 
-
+// Vẽ tam giác vuông cân
 function drawRightAngledTriangle(height) {
     var triangle = "";
     for (i = height; i > 0; i--) {
@@ -136,12 +147,28 @@ function showRightAngledTriangle() {
 
 
 
-// function drawEmptyRightAngledTriangle() {
-//     var height = document.getElementById('height2').value;
-//     var triangle = "";
-//     for (i = height; i > 0; i--) {
-//         for (j = 0; j < i; j++) {
-//             if ((i))
-//         }
-//     }
-// }
+function drawEmptyRightAngledTriangle(height) {
+    var triangle = "";
+    for (i = height; i > 0; i--) {
+        for (j = 0; j < i; j++) {
+            if ((i == height) && (j < i - 1)) {
+                triangle += "*";
+            } else if (j == i - 1) {
+                triangle += "*" + "<br>"
+            } else if (j == 0) {
+                triangle += "*";
+            } else {
+                triangle += "&nbsp;"
+            }
+        }
+    }
+    return triangle;
+}
+
+function getHeightEmptyRightAngledTriangle() {
+    return document.getElementById('height2').value;
+}
+
+function showEmptyRightAngledTriangle() {
+    return document.getElementById('result6').innerHTML = drawEmptyRightAngledTriangle(getHeightEmptyRightAngledTriangle());
+}
