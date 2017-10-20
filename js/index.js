@@ -32,30 +32,33 @@ function showSearchLinearResult() {
 //Tìm kiếm kiểu nhị phân
 function searchBinary(array, numberNeedToFind) {
     var minArrayIndex = 0;
-    var maxArrayIndex = array.length - 1;
-    for (i = 0; i < array.length; i++) {
-        if (minArrayIndex <= maxArrayIndex) {
-            var middleIndex = Math.floor((minArrayIndex + maxArrayIndex) / 2);
-            if (array[middleIndex] === numberNeedToFind) {
-                return "Phần tử cần tìm nằm ở vị trí: " + middleIndex;
-            }
-            if (array[middleIndex] < numberNeedToFind) {
-                minArrayIndex = middleIndex + 1;
-            } else {
-                maxArrayIndex = middleIndex - 1;
-            }
+    var maxArrayIndex = array.length;
+    var middleArrayIndex = 0;
+    do {
+        middleArrayIndex = Math.floor((minArrayIndex + maxArrayIndex) / 2);
+        if (array[middleArrayIndex] === numberNeedToFind) {
+            return "Phần tử nằm ở vị trí: " + middleArrayIndex;
+        } else if (array[middleArrayIndex] < numberNeedToFind) {
+            minArrayIndex = middleArrayIndex + 1;
+        } else {
+            maxArrayIndex = middleArrayIndex - 1;
         }
     }
+    while (minArrayIndex <= maxArrayIndex);
     return "-1 aka Không thấy";
 
 }
 
 function getArraySorted() {
-    return document.getElementById("array2").value.split(',');
+    var arraySorted = document.getElementById("array2").value.split(',');
+    for (i = 0; i < arraySorted.length; i++) {
+        arraySorted[i] = parseInt(arraySorted[i]);
+    }
+    return arraySorted;
 }
 
 function getNumberToFindInBinarySearch() {
-    return document.getElementById("number2").value;
+    return parseInt(document.getElementById("number2").value);
 }
 function showSearchBinaryResult() {
     return document.getElementById('result2').innerHTML = searchBinary(getArraySorted(), getNumberToFindInBinarySearch());
@@ -146,7 +149,7 @@ function showRightAngledTriangle() {
 }
 
 
-
+// Vẽ tam giác vuông cân rỗng
 function drawEmptyRightAngledTriangle(height) {
     var triangle = "";
     for (i = height; i > 0; i--) {
@@ -171,4 +174,103 @@ function getHeightEmptyRightAngledTriangle() {
 
 function showEmptyRightAngledTriangle() {
     return document.getElementById('result6').innerHTML = drawEmptyRightAngledTriangle(getHeightEmptyRightAngledTriangle());
+}
+
+//Vẽ tam giác cân
+function drawIsoscelesTriangle(height) {
+    var triangle = "";
+    var count = 0;
+    for (i = height; i > 0; i--) {
+        if (i == height) {
+            for (j = 0; j < i; j++) {
+                if (j == i - 1)  {
+                    triangle += "*" + "<br>"
+                } else {
+                    triangle += "*";
+                }
+            }
+        } else {
+            for (j = 0; j <= i ; j++) {
+                if ((j == 0) || (j < count)) {
+                    triangle += "&nbsp;";
+                } else  if (j == i) {
+                    triangle += "&nbsp;" + "<br>"
+                } else {
+                    triangle += "*"
+                }
+            }
+        }
+        count++;
+        if (count - i == 0) {
+            return triangle;
+        }
+    }
+}
+
+function getHeightIsoscelesTriangle() {
+    return document.getElementById('height3').value;
+}
+
+function showIsoscelesTriangle() {
+    return document.getElementById('result7').innerHTML = drawIsoscelesTriangle(getHeightIsoscelesTriangle());
+}
+
+//Vẽ tam giác cân rỗng
+function drawEmptyIsoscelesTriangle(height) {
+    var triangle = "";
+    var count = 0;
+    for (i = height; i > 0; i--) {
+        if (i == height) {
+            for (j = 0; j < i; j++) {
+                if (j == i - 1)  {
+                    triangle += "*" + "<br>"
+                } else {
+                    triangle += "*";
+                }
+            }
+        } else {
+            for (j = 0; j <= i ; j++) {
+                if ((j == 0) || (j < count)) {
+                    triangle += "&nbsp;";
+                } else  if (j == i) {
+                    triangle += "&nbsp;" + "<br>"
+                } else if ((j == count) || (j == i - 1)) {
+                    triangle += "*"
+                } else {
+                    triangle += "&nbsp;"
+                }
+            }
+        }
+        count++;
+        if (count - i == 0) {
+            return triangle;
+        }
+    }
+}
+
+function getHeightEmptyIsoscelesTriangle() {
+    return document.getElementById('height4').value;
+}
+
+function showEmptyIsoscelesTriangle() {
+    return document.getElementById('result8').innerHTML = drawEmptyIsoscelesTriangle(getHeightEmptyIsoscelesTriangle());
+}
+
+//Vẽ hình thoi
+function drawDiamond() {
+    var height = document.getElementById('height5').value;
+    var diamond = "";
+    var count = Math.floor(height / 2);
+    for (i = 0; i <= height; i++) {
+        for (j = height; j > 0; j--) {
+            if ((j == 0) || (j < count)) {
+                diamond += "&nbsp;";
+            } else if (j == height - count) {
+                diamond += "&nbsp;" +"<br>";
+            } else {
+                diamond += "*";
+            }
+        }
+    }
+    return document.getElementById('result9').innerHTML = diamond;
 }
