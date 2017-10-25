@@ -10,6 +10,11 @@
     <script src="js/index.js"></script>
     <link rel="stylesheet" href="css/bootstrap.css">
     <title>Basic Algorithm</title>
+    <style>
+        body {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
 </head>
 <body>
 <div class="container text-center">
@@ -52,6 +57,29 @@
                     <li role="presentation"><a role="menuitem" tabindex="-1" href="#homework8">Vẽ tam giác cân rỗng</a></li>
                     <li role="presentation"><a role="menuitem" tabindex="-1" href="#homework9">Vẽ hình thoi</a></li>
                     <li role="presentation"><a role="menuitem" tabindex="-1" href="#homework10">Vẽ hình thoi rỗng</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="col-sm-4 text-center">
+
+            <div class="btn-group">
+
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="dropdownMenu3">
+                    Mảng
+                    <span class="caret"></span>
+                </button>
+
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#homework11">Tìm phần tử nhỏ nhất</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#homework12">Tìm phần tử lớn nhất</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#homework13">Tìm phần tử nhỏ nhì</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#homework14">Tìm phần tử lớn nhì</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#homework15">Nối mảng</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#homework16">Đảo mảng</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#homework17">Kiểm tra đối xứng</a></li>
                 </ul>
 
             </div>
@@ -261,5 +289,137 @@
 
     <div id="result10"></div>
 </div>
+
+<div id="homework11" class="container">
+
+    <h2>Tìm số nhỏ nhất</h2>
+
+    <form class="form-inline" role="form">
+
+        <div class="form-group">
+            <label class="sr-only" for="array3">Mảng đầu vào </label>
+            <input type="text" class="form-control" id="array3" placeholder="Mảng đầu vào">
+        </div>
+
+        <button type = "button" class = "btn btn-default" onclick="showSmallestNumber()">Tìm số nhỏ nhất</button>
+
+    </form>
+
+    <p id="result11"></p>
+</div>
+
+<div id="homework12" class="container">
+
+    <h2>Tìm số lớn nhất</h2>
+
+    <form class="form-inline" role="form">
+
+        <div class="form-group">
+            <label class="sr-only" for="array4">Mảng đầu vào </label>
+            <input type="text" class="form-control" id="array4" placeholder="Mảng đầu vào">
+        </div>
+
+        <button type = "button" class = "btn btn-default" onclick="showBiggestNumber()">Tìm số lớn nhất</button>
+
+    </form>
+
+    <p id="result12"></p>
+</div>
+
+<div id="homework13" class="container">
+
+    <h2>Tìm số nhỏ nhì</h2>
+
+    <form class="form-inline" role="form">
+
+        <div class="form-group">
+            <label class="sr-only" for="array5">Mảng đầu vào </label>
+            <input type="text" class="form-control" id="array5" placeholder="Mảng đầu vào">
+        </div>
+
+        <button type = "button" class = "btn btn-default" onclick="showSecondSmallestNumber()">Tìm số nhỏ nhì</button>
+
+    </form>
+
+    <p id="result13"></p>
+</div>
+
+<div id="homework14" class="container">
+
+    <h2>Tìm số lớn nhì</h2>
+
+    <form class="form-inline" role="form">
+
+        <div class="form-group">
+            <label class="sr-only" for="array6">Mảng đầu vào </label>
+            <input type="text" class="form-control" id="array6" placeholder="Mảng đầu vào">
+        </div>
+
+        <button type = "button" class = "btn btn-default" onclick="showSecondBiggestNumber()">Tìm số lớn nhì</button>
+
+    </form>
+
+    <p id="result14"></p>
+</div>
+
+<div id="homework15" class="container">
+
+    <h2>Nối mảng</h2>
+
+    <form class="form-inline" role="form">
+
+        <div class="form-group">
+            <label class="sr-only" for="array7">Mảng đầu vào </label>
+            <input type="text" class="form-control" id="array7" placeholder="Mảng đầu vào">
+        </div>
+
+        <div class="form-group">
+            <label class="sr-only" for="array8">Mảng đầu vào </label>
+            <input type="text" class="form-control" id="array8" placeholder="Mảng đầu vào">
+        </div>
+
+        <button type = "button" class = "btn btn-default" onclick="showArrayAfterJoin()">Nối mảng</button>
+
+    </form>
+
+    <p id="result15"></p>
+</div>
+
+<div id="homework16" class="container">
+
+    <h2>Đảo mảng</h2>
+
+    <form class="form-inline" role="form">
+
+        <div class="form-group">
+            <label class="sr-only" for="array9">Mảng đầu vào </label>
+            <input type="text" class="form-control" id="array9" placeholder="Mảng đầu vào">
+        </div>
+
+        <button type = "button" class = "btn btn-default" onclick="showArrayAfterPermutation()">Đảo mảng</button>
+
+    </form>
+
+    <p id="result16"></p>
+</div>
+
+<div id="homework17" class="container">
+
+    <h2>Kiểm tra mảng đối xứng</h2>
+
+    <form class="form-inline" role="form">
+
+        <div class="form-group">
+            <label class="sr-only" for="array10">Mảng đầu vào </label>
+            <input type="text" class="form-control" id="array10" placeholder="Mảng đầu vào">
+        </div>
+
+        <button type = "button" class = "btn btn-default" onclick="showCheckArraySymmetryResult()">Đảo mảng</button>
+
+    </form>
+
+    <p id="result17"></p>
+</div>
+
 </body>
 </html>
